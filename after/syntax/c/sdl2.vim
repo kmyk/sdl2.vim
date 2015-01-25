@@ -7,6 +7,8 @@
 " SDL 2.0 API by Name
 " http://wiki.libsdl.org/CategoryAPI
 
+" Hints
+
 syn keyword Constant SDL_HINT_ACCELEROMETER_AS_JOYSTICK
 syn keyword Constant SDL_HINT_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION
 syn keyword Constant SDL_HINT_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION
@@ -44,6 +46,8 @@ syn keyword Constant SDL_HINT_WINRT_PRIVACY_POLICY_URL
 syn keyword Constant SDL_HINT_XINPUT_ENABLED
 syn keyword Constant SDL_HINT_XINPUT_USE_OLD_JOYSTICK_MAPPING
 
+" Enumerations
+
 syn keyword Constant SDL_AudioFormat
 syn keyword Constant SDL_AudioStatus
 syn keyword Constant SDL_BlendMode
@@ -76,6 +80,8 @@ syn keyword Constant SDL_WindowEventID
 syn keyword Constant SDL_WindowFlags
 syn keyword Constant SDL_assert_state
 syn keyword Constant SDL_bool
+
+" Structures
 
 syn keyword Structure SDL_AudioCVT
 syn keyword Structure SDL_AudioSpec
@@ -130,6 +136,8 @@ syn keyword Structure SDL_WindowEvent
 syn keyword Structure SDL_assert_data
 syn keyword Structure SDL_atomic_t
 syn keyword Structure SDL_version
+
+" Functions
 
 syn keyword Function SDL_AddEventWatch
 syn keyword Function SDL_AddHintCallback
@@ -643,3 +651,850 @@ syn keyword Function SDL_acos
 syn keyword Function SDL_assert
 syn keyword Function SDL_assert_paranoid
 syn keyword Function SDL_assert_release
+
+" SDL_AudioFormat
+
+syn keyword Constant SDL_AUDIO_MASK_BITSIZE
+syn keyword Constant SDL_AUDIO_MASK_DATATYPE
+syn keyword Constant SDL_AUDIO_MASK_ENDIAN
+syn keyword Constant SDL_AUDIO_MASK_SIGNED
+syn keyword Constant SDL_AUDIO_BITSIZE
+syn keyword Constant SDL_AUDIO_ISFLOAT
+syn keyword Constant SDL_AUDIO_ISBIGENDIAN
+syn keyword Constant SDL_AUDIO_ISSIGNED
+syn keyword Constant SDL_AUDIO_ISINT
+syn keyword Constant SDL_AUDIO_ISLITTLEENDIAN
+syn keyword Constant SDL_AUDIO_ISUNSIGNED
+
+syn keyword Constant AUDIO_S8
+syn keyword Constant AUDIO_U8
+syn keyword Constant AUDIO_S16LSB
+syn keyword Constant AUDIO_S16MSB
+syn keyword Constant AUDIO_S16SYS
+syn keyword Constant AUDIO_S16
+syn keyword Constant AUDIO_U16LSB
+syn keyword Constant AUDIO_U16MSB
+syn keyword Constant AUDIO_U16SYS
+syn keyword Constant AUDIO_U16
+syn keyword Constant AUDIO_S32LSB
+syn keyword Constant AUDIO_S32MSB
+syn keyword Constant AUDIO_S32SYS
+syn keyword Constant AUDIO_S32
+syn keyword Constant AUDIO_F32LSB
+syn keyword Constant AUDIO_F32MSB
+syn keyword Constant AUDIO_F32SYS
+syn keyword Constant AUDIO_F32
+
+" SDL_AudioStatus
+
+syn keyword Constant SDL_AUDIO_STOPPED
+syn keyword Constant SDL_AUDIO_PLAYING
+syn keyword Constant SDL_AUDIO_PAUSED
+
+" SDL_BlendMode
+
+syn keyword Constant SDL_BLENDMODE_NONE
+syn keyword Constant SDL_BLENDMODE_BLEND
+syn keyword Constant SDL_BLENDMODE_ADD
+syn keyword Constant SDL_BLENDMODE_MOD
+
+" SDL_EventType
+
+syn keyword Constant SDL_FIRSTEVENT
+syn keyword Constant SDL_QUIT
+syn keyword Constant SDL_APP_TERMINATING
+syn keyword Constant SDL_APP_LOWMEMORY
+syn keyword Constant SDL_APP_WILLENTERBACKGROUND
+syn keyword Constant SDL_APP_DIDENTERBACKGROUND
+syn keyword Constant SDL_APP_WILLENTERFOREGROUND
+syn keyword Constant SDL_APP_DIDENTERFOREGROUND
+syn keyword Constant SDL_WINDOWEVENT
+syn keyword Constant SDL_SYSWMEVENT
+syn keyword Constant SDL_KEYDOWN
+syn keyword Constant SDL_KEYUP
+syn keyword Constant SDL_TEXTEDITING
+syn keyword Constant SDL_TEXTINPUT
+syn keyword Constant SDL_MOUSEMOTION
+syn keyword Constant SDL_MOUSEBUTTONDOWN
+syn keyword Constant SDL_MOUSEBUTTONUP
+syn keyword Constant SDL_MOUSEWHEEL
+syn keyword Constant SDL_JOYAXISMOTION
+syn keyword Constant SDL_JOYBALLMOTION
+syn keyword Constant SDL_JOYHATMOTION
+syn keyword Constant SDL_JOYBUTTONDOWN
+syn keyword Constant SDL_JOYBUTTONUP
+syn keyword Constant SDL_JOYDEVICEADDED
+syn keyword Constant SDL_JOYDEVICEREMOVED
+syn keyword Constant SDL_CONTROLLERAXISMOTION
+syn keyword Constant SDL_CONTROLLERBUTTONDOWN
+syn keyword Constant SDL_CONTROLLERBUTTONUP
+syn keyword Constant SDL_CONTROLLERDEVICEADDED
+syn keyword Constant SDL_CONTROLLERDEVICEREMOVED
+syn keyword Constant SDL_CONTROLLERDEVICEREMAPPED
+syn keyword Constant SDL_FINGERDOWN
+syn keyword Constant SDL_FINGERUP
+syn keyword Constant SDL_FINGERMOTION
+syn keyword Constant SDL_DOLLARGESTURE
+syn keyword Constant SDL_DOLLARRECORD
+syn keyword Constant SDL_MULTIGESTURE
+syn keyword Constant SDL_CLIPBOARDUPDATE
+syn keyword Constant SDL_DROPFILE
+syn keyword Constant SDL_RENDER_TARGETS_RESET
+syn keyword Constant SDL_RENDER_DEVICE_RESET
+syn keyword Constant SDL_USEREVENT
+syn keyword Constant SDL_LASTEVENT
+
+" SDL_GLattr
+
+syn keyword Constant SDL_GL_RED_SIZE
+syn keyword Constant SDL_GL_GREEN_SIZE
+syn keyword Constant SDL_GL_BLUE_SIZE
+syn keyword Constant SDL_GL_ALPHA_SIZE
+syn keyword Constant SDL_GL_BUFFER_SIZE
+syn keyword Constant SDL_GL_DOUBLEBUFFER
+syn keyword Constant SDL_GL_DEPTH_SIZE
+syn keyword Constant SDL_GL_STENCIL_SIZE
+syn keyword Constant SDL_GL_ACCUM_RED_SIZE
+syn keyword Constant SDL_GL_ACCUM_GREEN_SIZE
+syn keyword Constant SDL_GL_ACCUM_BLUE_SIZE
+syn keyword Constant SDL_GL_ACCUM_ALPHA_SIZE
+syn keyword Constant SDL_GL_STEREO
+syn keyword Constant SDL_GL_MULTISAMPLEBUFFERS
+syn keyword Constant SDL_GL_MULTISAMPLESAMPLES
+syn keyword Constant SDL_GL_ACCELERATED_VISUAL
+syn keyword Constant SDL_GL_RETAINED_BACKING
+syn keyword Constant SDL_GL_CONTEXT_MAJOR_VERSION
+syn keyword Constant SDL_GL_CONTEXT_MINOR_VERSION
+syn keyword Constant SDL_GL_CONTEXT_FLAGS
+syn keyword Constant SDL_GL_CONTEXT_PROFILE_MASK
+syn keyword Constant SDL_GL_SHARE_WITH_CURRENT_CONTEXT
+syn keyword Constant SDL_GL_FRAMEBUFFER_SRGB_CAPABLE
+syn keyword Constant SDL_GL_CONTEXT_EGL
+
+" SDL_GLcontextFlag
+
+syn keyword Constant SDL_GL_CONTEXT_DEBUG_FLAG
+syn keyword Constant SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG
+syn keyword Constant SDL_GL_CONTEXT_ROBUST_ACCESS_FLAG
+syn keyword Constant SDL_GL_CONTEXT_RESET_ISOLATION_FLAG
+
+" SDL_GLprofile
+
+syn keyword Constant SDL_GL_CONTEXT_PROFILE_CORE
+syn keyword Constant SDL_GL_CONTEXT_PROFILE_COMPATIBILITY
+syn keyword Constant SDL_GL_CONTEXT_PROFILE_ES
+
+" SDL_GameControllerAxis
+
+syn keyword Constant SDL_CONTROLLER_AXIS_INVALID
+syn keyword Constant SDL_CONTROLLER_AXIS_LEFTX
+syn keyword Constant SDL_CONTROLLER_AXIS_LEFTY
+syn keyword Constant SDL_CONTROLLER_AXIS_RIGHTX
+syn keyword Constant SDL_CONTROLLER_AXIS_RIGHTY
+syn keyword Constant SDL_CONTROLLER_AXIS_TRIGGERLEFT
+syn keyword Constant SDL_CONTROLLER_AXIS_TRIGGERRIGHT
+syn keyword Constant SDL_CONTROLLER_AXIS_MAX
+
+" SDL_GameControllerButton
+
+syn keyword Constant SDL_CONTROLLER_BUTTON_INVALID
+syn keyword Constant SDL_CONTROLLER_BUTTON_A
+syn keyword Constant SDL_CONTROLLER_BUTTON_B
+syn keyword Constant SDL_CONTROLLER_BUTTON_X
+syn keyword Constant SDL_CONTROLLER_BUTTON_Y
+syn keyword Constant SDL_CONTROLLER_BUTTON_BACK
+syn keyword Constant SDL_CONTROLLER_BUTTON_GUIDE
+syn keyword Constant SDL_CONTROLLER_BUTTON_START
+syn keyword Constant SDL_CONTROLLER_BUTTON_LEFTSTICK
+syn keyword Constant SDL_CONTROLLER_BUTTON_RIGHTSTICK
+syn keyword Constant SDL_CONTROLLER_BUTTON_LEFTSHOULDER
+syn keyword Constant SDL_CONTROLLER_BUTTON_RIGHTSHOULDER
+syn keyword Constant SDL_CONTROLLER_BUTTON_DPAD_UP
+syn keyword Constant SDL_CONTROLLER_BUTTON_DPAD_DOWN
+syn keyword Constant SDL_CONTROLLER_BUTTON_DPAD_LEFT
+syn keyword Constant SDL_CONTROLLER_BUTTON_DPAD_RIGHT
+syn keyword Constant SDL_CONTROLLER_BUTTON_MAX
+
+" SDL_HintPriority
+
+syn keyword Constant SDL_HINT_DEFAULT
+syn keyword Constant SDL_HINT_NORMAL
+syn keyword Constant SDL_HINT_OVERRIDE
+
+" SDL_HitTestResult
+
+syn keyword Constant SDL_HITTEST_NORMAL
+syn keyword Constant SDL_HITTEST_DRAGGABLE
+syn keyword Constant SDL_HITTEST_RESIZE_TOPLEFT
+syn keyword Constant SDL_HITTEST_RESIZE_TOP
+syn keyword Constant SDL_HITTEST_RESIZE_TOPRIGHT
+syn keyword Constant SDL_HITTEST_RESIZE_RIGHT
+syn keyword Constant SDL_HITTEST_RESIZE_BOTTOMRIGHT
+syn keyword Constant SDL_HITTEST_RESIZE_BOTTOM
+syn keyword Constant SDL_HITTEST_RESIZE_BOTTOMLEFT
+syn keyword Constant SDL_HITTEST_RESIZE_LEFT
+
+" SDL_Keycode
+
+syn keyword Constant SDLK_0
+syn keyword Constant SDLK_1
+syn keyword Constant SDLK_2
+syn keyword Constant SDLK_3
+syn keyword Constant SDLK_4
+syn keyword Constant SDLK_5
+syn keyword Constant SDLK_6
+syn keyword Constant SDLK_7
+syn keyword Constant SDLK_8
+syn keyword Constant SDLK_9
+syn keyword Constant SDLK_a
+syn keyword Constant SDLK_AC_BACK
+syn keyword Constant SDLK_AC_BOOKMARKS
+syn keyword Constant SDLK_AC_FORWARD
+syn keyword Constant SDLK_AC_HOME
+syn keyword Constant SDLK_AC_REFRESH
+syn keyword Constant SDLK_AC_SEARCH
+syn keyword Constant SDLK_AC_STOP
+syn keyword Constant SDLK_AGAIN
+syn keyword Constant SDLK_ALTERASE
+syn keyword Constant SDLK_QUOTE
+syn keyword Constant SDLK_APPLICATION
+syn keyword Constant SDLK_AUDIOMUTE
+syn keyword Constant SDLK_AUDIONEXT
+syn keyword Constant SDLK_AUDIOPLAY
+syn keyword Constant SDLK_AUDIOPREV
+syn keyword Constant SDLK_AUDIOSTOP
+syn keyword Constant SDLK_b
+syn keyword Constant SDLK_BACKSLASH
+syn keyword Constant SDLK_BACKSPACE
+syn keyword Constant SDLK_BRIGHTNESSDOWN
+syn keyword Constant SDLK_BRIGHTNESSUP
+syn keyword Constant SDLK_c
+syn keyword Constant SDLK_CALCULATOR
+syn keyword Constant SDLK_CANCEL
+syn keyword Constant SDLK_CAPSLOCK
+syn keyword Constant SDLK_CLEAR
+syn keyword Constant SDLK_CLEARAGAIN
+syn keyword Constant SDLK_COMMA
+syn keyword Constant SDLK_COMPUTER
+syn keyword Constant SDLK_COPY
+syn keyword Constant SDLK_CRSEL
+syn keyword Constant SDLK_CURRENCYSUBUNIT
+syn keyword Constant SDLK_CURRENCYUNIT
+syn keyword Constant SDLK_CUT
+syn keyword Constant SDLK_d
+syn keyword Constant SDLK_DECIMALSEPARATOR
+syn keyword Constant SDLK_DELETE
+syn keyword Constant SDLK_DISPLAYSWITCH
+syn keyword Constant SDLK_DOWN
+syn keyword Constant SDLK_e
+syn keyword Constant SDLK_EJECT
+syn keyword Constant SDLK_END
+syn keyword Constant SDLK_EQUALS
+syn keyword Constant SDLK_ESCAPE
+syn keyword Constant SDLK_EXECUTE
+syn keyword Constant SDLK_EXSEL
+syn keyword Constant SDLK_f
+syn keyword Constant SDLK_F1
+syn keyword Constant SDLK_F10
+syn keyword Constant SDLK_F11
+syn keyword Constant SDLK_F12
+syn keyword Constant SDLK_F13
+syn keyword Constant SDLK_F14
+syn keyword Constant SDLK_F15
+syn keyword Constant SDLK_F16
+syn keyword Constant SDLK_F17
+syn keyword Constant SDLK_F18
+syn keyword Constant SDLK_F19
+syn keyword Constant SDLK_F2
+syn keyword Constant SDLK_F20
+syn keyword Constant SDLK_F21
+syn keyword Constant SDLK_F22
+syn keyword Constant SDLK_F23
+syn keyword Constant SDLK_F24
+syn keyword Constant SDLK_F3
+syn keyword Constant SDLK_F4
+syn keyword Constant SDLK_F5
+syn keyword Constant SDLK_F6
+syn keyword Constant SDLK_F7
+syn keyword Constant SDLK_F8
+syn keyword Constant SDLK_F9
+syn keyword Constant SDLK_FIND
+syn keyword Constant SDLK_g
+syn keyword Constant SDLK_BACKQUOTE
+syn keyword Constant SDLK_h
+syn keyword Constant SDLK_HELP
+syn keyword Constant SDLK_HOME
+syn keyword Constant SDLK_i
+syn keyword Constant SDLK_INSERT
+syn keyword Constant SDLK_j
+syn keyword Constant SDLK_k
+syn keyword Constant SDLK_KBDILLUMDOWN
+syn keyword Constant SDLK_KBDILLUMTOGGLE
+syn keyword Constant SDLK_KBDILLUMUP
+syn keyword Constant SDLK_KP_0
+syn keyword Constant SDLK_KP_00
+syn keyword Constant SDLK_KP_000
+syn keyword Constant SDLK_KP_1
+syn keyword Constant SDLK_KP_2
+syn keyword Constant SDLK_KP_3
+syn keyword Constant SDLK_KP_4
+syn keyword Constant SDLK_KP_5
+syn keyword Constant SDLK_KP_6
+syn keyword Constant SDLK_KP_7
+syn keyword Constant SDLK_KP_8
+syn keyword Constant SDLK_KP_9
+syn keyword Constant SDLK_KP_A
+syn keyword Constant SDLK_KP_AMPERSAND
+syn keyword Constant SDLK_KP_AT
+syn keyword Constant SDLK_KP_B
+syn keyword Constant SDLK_KP_BACKSPACE
+syn keyword Constant SDLK_KP_BINARY
+syn keyword Constant SDLK_KP_C
+syn keyword Constant SDLK_KP_CLEAR
+syn keyword Constant SDLK_KP_CLEARENTRY
+syn keyword Constant SDLK_KP_COLON
+syn keyword Constant SDLK_KP_COMMA
+syn keyword Constant SDLK_KP_D
+syn keyword Constant SDLK_KP_DBLAMPERSAND
+syn keyword Constant SDLK_KP_DBLVERTICALBAR
+syn keyword Constant SDLK_KP_DECIMAL
+syn keyword Constant SDLK_KP_DIVIDE
+syn keyword Constant SDLK_KP_E
+syn keyword Constant SDLK_KP_ENTER
+syn keyword Constant SDLK_KP_EQUALS
+syn keyword Constant SDLK_KP_EQUALSAS400
+syn keyword Constant SDLK_KP_EXCLAM
+syn keyword Constant SDLK_KP_F
+syn keyword Constant SDLK_KP_GREATER
+syn keyword Constant SDLK_KP_HASH
+syn keyword Constant SDLK_KP_HEXADECIMAL
+syn keyword Constant SDLK_KP_LEFTBRACE
+syn keyword Constant SDLK_KP_LEFTPAREN
+syn keyword Constant SDLK_KP_LESS
+syn keyword Constant SDLK_KP_MEMADD
+syn keyword Constant SDLK_KP_MEMCLEAR
+syn keyword Constant SDLK_KP_MEMDIVIDE
+syn keyword Constant SDLK_KP_MEMMULTIPLY
+syn keyword Constant SDLK_KP_MEMRECALL
+syn keyword Constant SDLK_KP_MEMSTORE
+syn keyword Constant SDLK_KP_MEMSUBTRACT
+syn keyword Constant SDLK_KP_MINUS
+syn keyword Constant SDLK_KP_MULTIPLY
+syn keyword Constant SDLK_KP_OCTAL
+syn keyword Constant SDLK_KP_PERCENT
+syn keyword Constant SDLK_KP_PERIOD
+syn keyword Constant SDLK_KP_PLUS
+syn keyword Constant SDLK_KP_PLUSMINUS
+syn keyword Constant SDLK_KP_POWER
+syn keyword Constant SDLK_KP_RIGHTBRACE
+syn keyword Constant SDLK_KP_RIGHTPAREN
+syn keyword Constant SDLK_KP_SPACE
+syn keyword Constant SDLK_KP_TAB
+syn keyword Constant SDLK_KP_VERTICALBAR
+syn keyword Constant SDLK_KP_XOR
+syn keyword Constant SDLK_l
+syn keyword Constant SDLK_LALT
+syn keyword Constant SDLK_LCTRL
+syn keyword Constant SDLK_LEFT
+syn keyword Constant SDLK_LEFTBRACKET
+syn keyword Constant SDLK_LGUI
+syn keyword Constant SDLK_LSHIFT
+syn keyword Constant SDLK_m
+syn keyword Constant SDLK_MAIL
+syn keyword Constant SDLK_MEDIASELECT
+syn keyword Constant SDLK_MENU
+syn keyword Constant SDLK_MINUS
+syn keyword Constant SDLK_MODE
+syn keyword Constant SDLK_MUTE
+syn keyword Constant SDLK_n
+syn keyword Constant SDLK_NUMLOCKCLEAR
+syn keyword Constant SDLK_o
+syn keyword Constant SDLK_OPER
+syn keyword Constant SDLK_OUT
+syn keyword Constant SDLK_p
+syn keyword Constant SDLK_PAGEDOWN
+syn keyword Constant SDLK_PAGEUP
+syn keyword Constant SDLK_PASTE
+syn keyword Constant SDLK_PAUSE
+syn keyword Constant SDLK_PERIOD
+syn keyword Constant SDLK_POWER
+syn keyword Constant SDLK_PRINTSCREEN
+syn keyword Constant SDLK_PRIOR
+syn keyword Constant SDLK_q
+syn keyword Constant SDLK_r
+syn keyword Constant SDLK_RALT
+syn keyword Constant SDLK_RCTRL
+syn keyword Constant SDLK_RETURN
+syn keyword Constant SDLK_RETURN2
+syn keyword Constant SDLK_RGUI
+syn keyword Constant SDLK_RIGHT
+syn keyword Constant SDLK_RIGHTBRACKET
+syn keyword Constant SDLK_RSHIFT
+syn keyword Constant SDLK_s
+syn keyword Constant SDLK_SCROLLLOCK
+syn keyword Constant SDLK_SELECT
+syn keyword Constant SDLK_SEMICOLON
+syn keyword Constant SDLK_SEPARATOR
+syn keyword Constant SDLK_SLASH
+syn keyword Constant SDLK_SLEEP
+syn keyword Constant SDLK_SPACE
+syn keyword Constant SDLK_STOP
+syn keyword Constant SDLK_SYSREQ
+syn keyword Constant SDLK_t
+syn keyword Constant SDLK_TAB
+syn keyword Constant SDLK_THOUSANDSSEPARATOR
+syn keyword Constant SDLK_u
+syn keyword Constant SDLK_UNDO
+syn keyword Constant SDLK_UNKNOWN
+syn keyword Constant SDLK_UP
+syn keyword Constant SDLK_v
+syn keyword Constant SDLK_VOLUMEDOWN
+syn keyword Constant SDLK_VOLUMEUP
+syn keyword Constant SDLK_w
+syn keyword Constant SDLK_WWW
+syn keyword Constant SDLK_x
+syn keyword Constant SDLK_y
+syn keyword Constant SDLK_z
+syn keyword Constant SDLK_AMPERSAND
+syn keyword Constant SDLK_ASTERISK
+syn keyword Constant SDLK_AT
+syn keyword Constant SDLK_CARET
+syn keyword Constant SDLK_COLON
+syn keyword Constant SDLK_DOLLAR
+syn keyword Constant SDLK_EXCLAIM
+syn keyword Constant SDLK_GREATER
+syn keyword Constant SDLK_HASH
+syn keyword Constant SDLK_LEFTPAREN
+syn keyword Constant SDLK_LESS
+syn keyword Constant SDLK_PERCENT
+syn keyword Constant SDLK_PLUS
+syn keyword Constant SDLK_QUESTION
+syn keyword Constant SDLK_QUOTEDBL
+syn keyword Constant SDLK_RIGHTPAREN
+syn keyword Constant SDLK_UNDERSCORE
+
+" SDL_Keymod
+
+syn keyword Constant KMOD_NONE
+syn keyword Constant KMOD_LSHIFT
+syn keyword Constant KMOD_RSHIFT
+syn keyword Constant KMOD_LCTRL
+syn keyword Constant KMOD_RCTRL
+syn keyword Constant KMOD_LALT
+syn keyword Constant KMOD_RALT
+syn keyword Constant KMOD_LGUI
+syn keyword Constant KMOD_RGUI
+syn keyword Constant KMOD_NUM
+syn keyword Constant KMOD_CAPS
+syn keyword Constant KMOD_MODE
+syn keyword Constant KMOD_CTRL
+syn keyword Constant KMOD_SHIFT
+syn keyword Constant KMOD_ALT
+syn keyword Constant KMOD_GUI
+syn keyword Constant KMOD_RESERVED
+
+" SDL_LOG_CATEGORY
+
+syn keyword Constant SDL_LOG_CATEGORY_APPLICATION
+syn keyword Constant SDL_LOG_CATEGORY_ERROR
+syn keyword Constant SDL_LOG_CATEGORY_SYSTEM
+syn keyword Constant SDL_LOG_CATEGORY_AUDIO
+syn keyword Constant SDL_LOG_CATEGORY_VIDEO
+syn keyword Constant SDL_LOG_CATEGORY_RENDER
+syn keyword Constant SDL_LOG_CATEGORY_INPUT
+syn keyword Constant SDL_LOG_CATEGORY_RESERVED
+syn keyword Constant SDL_LOG_CATEGORY_CUSTOM
+
+" SDL_LogPriority
+
+syn keyword Constant SDL_LOG_PRIORITY_VERBOSE
+syn keyword Constant SDL_LOG_PRIORITY_DEBUG
+syn keyword Constant SDL_LOG_PRIORITY_INFO
+syn keyword Constant SDL_LOG_PRIORITY_WARN
+syn keyword Constant SDL_LOG_PRIORITY_ERROR
+syn keyword Constant SDL_LOG_PRIORITY_CRITICAL
+syn keyword Constant SDL_NUM_LOG_PRIORITIES
+
+" SDL_MessageBoxButtonFlags
+
+syn keyword Constant SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT
+syn keyword Constant SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT
+
+" SDL_MessageBoxColorType
+
+syn keyword Constant SDL_MESSAGEBOX_COLOR_BACKGROUND
+syn keyword Constant SDL_MESSAGEBOX_COLOR_TEXT
+syn keyword Constant SDL_MESSAGEBOX_COLOR_BUTTON_BORDER
+syn keyword Constant SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND
+syn keyword Constant SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED
+syn keyword Constant SDL_MESSAGEBOX_COLOR_MAX
+
+" SDL_MessageBoxFlags
+
+syn keyword Constant SDL_MESSAGEBOX_ERROR
+syn keyword Constant SDL_MESSAGEBOX_WARNING
+syn keyword Constant SDL_MESSAGEBOX_INFORMATION
+
+" SDL_PixelFormatEnum
+
+syn keyword Constant SDL_PIXELTYPE
+syn keyword Constant SDL_PIXELORDER
+syn keyword Constant SDL_PIXELLAYOUT
+syn keyword Constant SDL_BITSPERPIXEL
+syn keyword Constant SDL_BYTESPERPIXEL
+syn keyword Constant SDL_ISPIXELFORMAT_INDEXED
+syn keyword Constant SDL_ISPIXELFORMAT_ALPHA
+syn keyword Constant SDL_ISPIXELFORMAT_FOURCC
+
+" SDL_PowerState
+
+syn keyword Constant SDL_POWERSTATE_UNKNOWN
+syn keyword Constant SDL_POWERSTATE_ON_BATTERY
+syn keyword Constant SDL_POWERSTATE_NO_BATTERY
+syn keyword Constant SDL_POWERSTATE_CHARGING
+syn keyword Constant SDL_POWERSTATE_CHARGED
+
+" SDL_RendererFlags
+
+syn keyword Constant SDL_RENDERER_SOFTWARE
+syn keyword Constant SDL_RENDERER_ACCELERATED
+syn keyword Constant SDL_RENDERER_PRESENTVSYNC
+syn keyword Constant SDL_RENDERER_TARGETTEXTURE
+
+" SDL_RendererFlip
+
+syn keyword Constant SDL_FLIP_NONE
+syn keyword Constant SDL_FLIP_HORIZONTAL
+syn keyword Constant SDL_FLIP_VERTICAL
+
+" SDL_SYSWM_TYPE
+
+syn keyword Constant SDL_SYSWM_UNKNOWN
+syn keyword Constant SDL_SYSWM_WINDOWS
+syn keyword Constant SDL_SYSWM_X11
+syn keyword Constant SDL_SYSWM_DIRECTFB
+syn keyword Constant SDL_SYSWM_COCOA
+syn keyword Constant SDL_SYSWM_UIKIT
+syn keyword Constant SDL_SYSWM_WAYLAND
+syn keyword Constant SDL_SYSWM_MIR
+syn keyword Constant SDL_SYSWM_WINRT
+syn keyword Constant SDL_SYSWM_ANDROID
+
+" SDL_Scancode
+
+syn keyword Constant SDL_SCANCODE_0
+syn keyword Constant SDL_SCANCODE_1
+syn keyword Constant SDL_SCANCODE_2
+syn keyword Constant SDL_SCANCODE_3
+syn keyword Constant SDL_SCANCODE_4
+syn keyword Constant SDL_SCANCODE_5
+syn keyword Constant SDL_SCANCODE_6
+syn keyword Constant SDL_SCANCODE_7
+syn keyword Constant SDL_SCANCODE_8
+syn keyword Constant SDL_SCANCODE_9
+syn keyword Constant SDL_SCANCODE_A
+syn keyword Constant SDL_SCANCODE_AC_BACK
+syn keyword Constant SDL_SCANCODE_AC_BOOKMARKS
+syn keyword Constant SDL_SCANCODE_AC_FORWARD
+syn keyword Constant SDL_SCANCODE_AC_HOME
+syn keyword Constant SDL_SCANCODE_AC_REFRESH
+syn keyword Constant SDL_SCANCODE_AC_SEARCH
+syn keyword Constant SDL_SCANCODE_AC_STOP
+syn keyword Constant SDL_SCANCODE_AGAIN
+syn keyword Constant SDL_SCANCODE_ALTERASE
+syn keyword Constant SDL_SCANCODE_APOSTROPHE
+syn keyword Constant SDL_SCANCODE_APPLICATION
+syn keyword Constant SDL_SCANCODE_AUDIOMUTE
+syn keyword Constant SDL_SCANCODE_AUDIONEXT
+syn keyword Constant SDL_SCANCODE_AUDIOPLAY
+syn keyword Constant SDL_SCANCODE_AUDIOPREV
+syn keyword Constant SDL_SCANCODE_AUDIOSTOP
+syn keyword Constant SDL_SCANCODE_B
+syn keyword Constant SDL_SCANCODE_BACKSLASH
+syn keyword Constant SDL_SCANCODE_BACKSPACE
+syn keyword Constant SDL_SCANCODE_BRIGHTNESSDOWN
+syn keyword Constant SDL_SCANCODE_BRIGHTNESSUP
+syn keyword Constant SDL_SCANCODE_C
+syn keyword Constant SDL_SCANCODE_CALCULATOR
+syn keyword Constant SDL_SCANCODE_CANCEL
+syn keyword Constant SDL_SCANCODE_CAPSLOCK
+syn keyword Constant SDL_SCANCODE_CLEAR
+syn keyword Constant SDL_SCANCODE_CLEARAGAIN
+syn keyword Constant SDL_SCANCODE_COMMA
+syn keyword Constant SDL_SCANCODE_COMPUTER
+syn keyword Constant SDL_SCANCODE_COPY
+syn keyword Constant SDL_SCANCODE_CRSEL
+syn keyword Constant SDL_SCANCODE_CURRENCYSUBUNIT
+syn keyword Constant SDL_SCANCODE_CURRENCYUNIT
+syn keyword Constant SDL_SCANCODE_CUT
+syn keyword Constant SDL_SCANCODE_D
+syn keyword Constant SDL_SCANCODE_DECIMALSEPARATOR
+syn keyword Constant SDL_SCANCODE_DELETE
+syn keyword Constant SDL_SCANCODE_DISPLAYSWITCH
+syn keyword Constant SDL_SCANCODE_DOWN
+syn keyword Constant SDL_SCANCODE_E
+syn keyword Constant SDL_SCANCODE_EJECT
+syn keyword Constant SDL_SCANCODE_END
+syn keyword Constant SDL_SCANCODE_EQUALS
+syn keyword Constant SDL_SCANCODE_ESCAPE
+syn keyword Constant SDL_SCANCODE_EXECUTE
+syn keyword Constant SDL_SCANCODE_EXSEL
+syn keyword Constant SDL_SCANCODE_F
+syn keyword Constant SDL_SCANCODE_F1
+syn keyword Constant SDL_SCANCODE_F10
+syn keyword Constant SDL_SCANCODE_F11
+syn keyword Constant SDL_SCANCODE_F12
+syn keyword Constant SDL_SCANCODE_F13
+syn keyword Constant SDL_SCANCODE_F14
+syn keyword Constant SDL_SCANCODE_F15
+syn keyword Constant SDL_SCANCODE_F16
+syn keyword Constant SDL_SCANCODE_F17
+syn keyword Constant SDL_SCANCODE_F18
+syn keyword Constant SDL_SCANCODE_F19
+syn keyword Constant SDL_SCANCODE_F2
+syn keyword Constant SDL_SCANCODE_F20
+syn keyword Constant SDL_SCANCODE_F21
+syn keyword Constant SDL_SCANCODE_F22
+syn keyword Constant SDL_SCANCODE_F23
+syn keyword Constant SDL_SCANCODE_F24
+syn keyword Constant SDL_SCANCODE_F3
+syn keyword Constant SDL_SCANCODE_F4
+syn keyword Constant SDL_SCANCODE_F5
+syn keyword Constant SDL_SCANCODE_F6
+syn keyword Constant SDL_SCANCODE_F7
+syn keyword Constant SDL_SCANCODE_F8
+syn keyword Constant SDL_SCANCODE_F9
+syn keyword Constant SDL_SCANCODE_FIND
+syn keyword Constant SDL_SCANCODE_G
+syn keyword Constant SDL_SCANCODE_GRAVE
+syn keyword Constant SDL_SCANCODE_H
+syn keyword Constant SDL_SCANCODE_HELP
+syn keyword Constant SDL_SCANCODE_HOME
+syn keyword Constant SDL_SCANCODE_I
+syn keyword Constant SDL_SCANCODE_INSERT
+syn keyword Constant SDL_SCANCODE_J
+syn keyword Constant SDL_SCANCODE_K
+syn keyword Constant SDL_SCANCODE_KBDILLUMDOWN
+syn keyword Constant SDL_SCANCODE_KBDILLUMTOGGLE
+syn keyword Constant SDL_SCANCODE_KBDILLUMUP
+syn keyword Constant SDL_SCANCODE_KP_0
+syn keyword Constant SDL_SCANCODE_KP_00
+syn keyword Constant SDL_SCANCODE_KP_000
+syn keyword Constant SDL_SCANCODE_KP_1
+syn keyword Constant SDL_SCANCODE_KP_2
+syn keyword Constant SDL_SCANCODE_KP_3
+syn keyword Constant SDL_SCANCODE_KP_4
+syn keyword Constant SDL_SCANCODE_KP_5
+syn keyword Constant SDL_SCANCODE_KP_6
+syn keyword Constant SDL_SCANCODE_KP_7
+syn keyword Constant SDL_SCANCODE_KP_8
+syn keyword Constant SDL_SCANCODE_KP_9
+syn keyword Constant SDL_SCANCODE_KP_A
+syn keyword Constant SDL_SCANCODE_KP_AMPERSAND
+syn keyword Constant SDL_SCANCODE_KP_AT
+syn keyword Constant SDL_SCANCODE_KP_B
+syn keyword Constant SDL_SCANCODE_KP_BACKSPACE
+syn keyword Constant SDL_SCANCODE_KP_BINARY
+syn keyword Constant SDL_SCANCODE_KP_C
+syn keyword Constant SDL_SCANCODE_KP_CLEAR
+syn keyword Constant SDL_SCANCODE_KP_CLEARENTRY
+syn keyword Constant SDL_SCANCODE_KP_COLON
+syn keyword Constant SDL_SCANCODE_KP_COMMA
+syn keyword Constant SDL_SCANCODE_KP_D
+syn keyword Constant SDL_SCANCODE_KP_DBLAMPERSAND
+syn keyword Constant SDL_SCANCODE_KP_DBLVERTICALBAR
+syn keyword Constant SDL_SCANCODE_KP_DECIMAL
+syn keyword Constant SDL_SCANCODE_KP_DIVIDE
+syn keyword Constant SDL_SCANCODE_KP_E
+syn keyword Constant SDL_SCANCODE_KP_ENTER
+syn keyword Constant SDL_SCANCODE_KP_EQUALS
+syn keyword Constant SDL_SCANCODE_KP_EQUALSAS400
+syn keyword Constant SDL_SCANCODE_KP_EXCLAM
+syn keyword Constant SDL_SCANCODE_KP_F
+syn keyword Constant SDL_SCANCODE_KP_GREATER
+syn keyword Constant SDL_SCANCODE_KP_HASH
+syn keyword Constant SDL_SCANCODE_KP_HEXADECIMAL
+syn keyword Constant SDL_SCANCODE_KP_LEFTBRACE
+syn keyword Constant SDL_SCANCODE_KP_LEFTPAREN
+syn keyword Constant SDL_SCANCODE_KP_LESS
+syn keyword Constant SDL_SCANCODE_KP_MEMADD
+syn keyword Constant SDL_SCANCODE_KP_MEMCLEAR
+syn keyword Constant SDL_SCANCODE_KP_MEMDIVIDE
+syn keyword Constant SDL_SCANCODE_KP_MEMMULTIPLY
+syn keyword Constant SDL_SCANCODE_KP_MEMRECALL
+syn keyword Constant SDL_SCANCODE_KP_MEMSTORE
+syn keyword Constant SDL_SCANCODE_KP_MEMSUBTRACT
+syn keyword Constant SDL_SCANCODE_KP_MINUS
+syn keyword Constant SDL_SCANCODE_KP_MULTIPLY
+syn keyword Constant SDL_SCANCODE_KP_OCTAL
+syn keyword Constant SDL_SCANCODE_KP_PERCENT
+syn keyword Constant SDL_SCANCODE_KP_PERIOD
+syn keyword Constant SDL_SCANCODE_KP_PLUS
+syn keyword Constant SDL_SCANCODE_KP_PLUSMINUS
+syn keyword Constant SDL_SCANCODE_KP_POWER
+syn keyword Constant SDL_SCANCODE_KP_RIGHTBRACE
+syn keyword Constant SDL_SCANCODE_KP_RIGHTPAREN
+syn keyword Constant SDL_SCANCODE_KP_SPACE
+syn keyword Constant SDL_SCANCODE_KP_TAB
+syn keyword Constant SDL_SCANCODE_KP_VERTICALBAR
+syn keyword Constant SDL_SCANCODE_KP_XOR
+syn keyword Constant SDL_SCANCODE_L
+syn keyword Constant SDL_SCANCODE_LALT
+syn keyword Constant SDL_SCANCODE_LCTRL
+syn keyword Constant SDL_SCANCODE_LEFT
+syn keyword Constant SDL_SCANCODE_LEFTBRACKET
+syn keyword Constant SDL_SCANCODE_LGUI
+syn keyword Constant SDL_SCANCODE_LSHIFT
+syn keyword Constant SDL_SCANCODE_M
+syn keyword Constant SDL_SCANCODE_MAIL
+syn keyword Constant SDL_SCANCODE_MEDIASELECT
+syn keyword Constant SDL_SCANCODE_MENU
+syn keyword Constant SDL_SCANCODE_MINUS
+syn keyword Constant SDL_SCANCODE_MODE
+syn keyword Constant SDL_SCANCODE_MUTE
+syn keyword Constant SDL_SCANCODE_N
+syn keyword Constant SDL_SCANCODE_NUMLOCKCLEAR
+syn keyword Constant SDL_SCANCODE_O
+syn keyword Constant SDL_SCANCODE_OPER
+syn keyword Constant SDL_SCANCODE_OUT
+syn keyword Constant SDL_SCANCODE_P
+syn keyword Constant SDL_SCANCODE_PAGEDOWN
+syn keyword Constant SDL_SCANCODE_PAGEUP
+syn keyword Constant SDL_SCANCODE_PASTE
+syn keyword Constant SDL_SCANCODE_PAUSE
+syn keyword Constant SDL_SCANCODE_PERIOD
+syn keyword Constant SDL_SCANCODE_POWER
+syn keyword Constant SDL_SCANCODE_PRINTSCREEN
+syn keyword Constant SDL_SCANCODE_PRIOR
+syn keyword Constant SDL_SCANCODE_Q
+syn keyword Constant SDL_SCANCODE_R
+syn keyword Constant SDL_SCANCODE_RALT
+syn keyword Constant SDL_SCANCODE_RCTRL
+syn keyword Constant SDL_SCANCODE_RETURN
+syn keyword Constant SDL_SCANCODE_RETURN2
+syn keyword Constant SDL_SCANCODE_RGUI
+syn keyword Constant SDL_SCANCODE_RIGHT
+syn keyword Constant SDL_SCANCODE_RIGHTBRACKET
+syn keyword Constant SDL_SCANCODE_RSHIFT
+syn keyword Constant SDL_SCANCODE_S
+syn keyword Constant SDL_SCANCODE_SCROLLLOCK
+syn keyword Constant SDL_SCANCODE_SELECT
+syn keyword Constant SDL_SCANCODE_SEMICOLON
+syn keyword Constant SDL_SCANCODE_SEPARATOR
+syn keyword Constant SDL_SCANCODE_SLASH
+syn keyword Constant SDL_SCANCODE_SLEEP
+syn keyword Constant SDL_SCANCODE_SPACE
+syn keyword Constant SDL_SCANCODE_STOP
+syn keyword Constant SDL_SCANCODE_SYSREQ
+syn keyword Constant SDL_SCANCODE_T
+syn keyword Constant SDL_SCANCODE_TAB
+syn keyword Constant SDL_SCANCODE_THOUSANDSSEPARATOR
+syn keyword Constant SDL_SCANCODE_U
+syn keyword Constant SDL_SCANCODE_UNDO
+syn keyword Constant SDL_SCANCODE_UNKNOWN
+syn keyword Constant SDL_SCANCODE_UP
+syn keyword Constant SDL_SCANCODE_V
+syn keyword Constant SDL_SCANCODE_VOLUMEDOWN
+syn keyword Constant SDL_SCANCODE_VOLUMEUP
+syn keyword Constant SDL_SCANCODE_W
+syn keyword Constant SDL_SCANCODE_WWW
+syn keyword Constant SDL_SCANCODE_X
+syn keyword Constant SDL_SCANCODE_Y
+syn keyword Constant SDL_SCANCODE_Z
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL1
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL2
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL3
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL4
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL5
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL6
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL7
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL8
+syn keyword Constant SDL_SCANCODE_INTERNATIONAL9
+syn keyword Constant SDL_SCANCODE_LANG1
+syn keyword Constant SDL_SCANCODE_LANG2
+syn keyword Constant SDL_SCANCODE_LANG3
+syn keyword Constant SDL_SCANCODE_LANG4
+syn keyword Constant SDL_SCANCODE_LANG5
+syn keyword Constant SDL_SCANCODE_LANG6
+syn keyword Constant SDL_SCANCODE_LANG7
+syn keyword Constant SDL_SCANCODE_LANG8
+syn keyword Constant SDL_SCANCODE_LANG9
+syn keyword Constant SDL_SCANCODE_LOCKINGCAPSLOCK
+syn keyword Constant SDL_SCANCODE_LOCKINGNUMLOCK
+syn keyword Constant SDL_SCANCODE_LOCKINGSCROLLLOCK
+syn keyword Constant SDL_SCANCODE_NONUSBACKSLASH
+syn keyword Constant SDL_SCANCODE_NONUSHASH
+
+" SDL_TextureAccess
+
+syn keyword Constant SDL_TEXTUREACCESS_STATIC
+syn keyword Constant SDL_TEXTUREACCESS_STREAMING
+syn keyword Constant SDL_TEXTUREACCESS_TARGET
+
+" SDL_TextureModulate
+
+syn keyword Constant SDL_TEXTUREMODULATE_NONE
+syn keyword Constant SDL_TEXTUREMODULATE_COLOR
+syn keyword Constant SDL_TEXTUREMODULATE_ALPHA
+
+" SDL_ThreadPriority
+
+syn keyword Constant SDL_THREAD_PRIORITY_LOW
+syn keyword Constant SDL_THREAD_PRIORITY_NORMAL
+syn keyword Constant SDL_THREAD_PRIORITY_HIGH
+
+" SDL_WinRT_Path
+
+syn keyword Constant SDL_WINRT_PATH_INSTALLED_LOCATION
+syn keyword Constant SDL_WINRT_PATH_LOCAL_FOLDER
+syn keyword Constant SDL_WINRT_PATH_ROAMING_FOLDER
+syn keyword Constant SDL_WINRT_PATH_TEMP_FOLDER
+
+" SDL_WindowEventID
+
+syn keyword Constant SDL_WINDOWEVENT_NONE
+syn keyword Constant SDL_WINDOWEVENT_SHOWN
+syn keyword Constant SDL_WINDOWEVENT_HIDDEN
+syn keyword Constant SDL_WINDOWEVENT_EXPOSED
+syn keyword Constant SDL_WINDOWEVENT_MOVED
+syn keyword Constant SDL_WINDOWEVENT_RESIZED
+syn keyword Constant SDL_WINDOWEVENT_SIZE_CHANGED
+syn keyword Constant SDL_WINDOWEVENT_MINIMIZED
+syn keyword Constant SDL_WINDOWEVENT_MAXIMIZED
+syn keyword Constant SDL_WINDOWEVENT_RESTORED
+syn keyword Constant SDL_WINDOWEVENT_ENTER
+syn keyword Constant SDL_WINDOWEVENT_LEAVE
+syn keyword Constant SDL_WINDOWEVENT_FOCUS_GAINED
+syn keyword Constant SDL_WINDOWEVENT_FOCUS_LOST
+syn keyword Constant SDL_WINDOWEVENT_CLOSE
+
+" SDL_WindowFlags
+
+syn keyword Constant SDL_WINDOW_FULLSCREEN
+syn keyword Constant SDL_WINDOW_FULLSCREEN_DESKTOP
+syn keyword Constant SDL_WINDOW_OPENGL
+syn keyword Constant SDL_WINDOW_SHOWN
+syn keyword Constant SDL_WINDOW_HIDDEN
+syn keyword Constant SDL_WINDOW_BORDERLESS
+syn keyword Constant SDL_WINDOW_RESIZABLE
+syn keyword Constant SDL_WINDOW_MINIMIZED
+syn keyword Constant SDL_WINDOW_MAXIMIZED
+syn keyword Constant SDL_WINDOW_INPUT_GRABBED
+syn keyword Constant SDL_WINDOW_INPUT_FOCUS
+syn keyword Constant SDL_WINDOW_MOUSE_FOCUS
+syn keyword Constant SDL_WINDOW_FOREIGN
+syn keyword Constant SDL_WINDOW_ALLOW_HIGHDPI
+syn keyword Constant SDL_WINDOW_MOUSE_CAPTURE
+
+" SDL_assert_state
+
+syn keyword Constant SDL_ASSERTION_RETRY
+syn keyword Constant SDL_ASSERTION_BREAK
+syn keyword Constant SDL_ASSERTION_ABORT
+syn keyword Constant SDL_ASSERTION_IGNORE
+syn keyword Constant SDL_ASSERTION_ALWAYS_IGNORE
+
+" SDL_bool
+
+syn keyword Constant SDL_FALSE
+syn keyword Constant SDL_TRUE
